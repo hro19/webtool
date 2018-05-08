@@ -1,0 +1,279 @@
+●wpタグ
+
+//公開URL呼び出し
+<?php echo home_url(); ?>
+
+//テンプレートファイル呼び出し
+<?php get_template_part('呼び出したいもの'); ?>
+<?php get_template_part('sub_navi','policy'); ?>
+
+<?php get_header(); ?>
+<?php get_header('ennai'); ?>
+<?php get_footer(); ?>
+<?php get_sidebar(); ?>
+
+//header,footerに入れるタグ
+<?php wp_head(); ?>/headの上に書く
+<?php wp_footer(); ?>/bodyの上に書く
+<body <?php body_class(); ?>>
+
+//基本呼び出し
+<?php the_title(); ?>
+<?php the_content(); ?>
+<?php the_time('Y年m月d日'); ?>
+<?php the_permalink();?>">
+※文字数指定でhtmlタグを消してテキストのみを表示する方法
+<?php echo na_trim_words(get_the_content(),100,'...'); ?>
+
+//パーマリンク設定
+/%category%/%post_id%/
+
+//リダイレクト
+・同じテンプレートを使用するとき
+<?php include_once "archive-news.php"; ?>
+
+//ホームにリダイレクトするとき
+<?php
+header('Location:'.home_url());
+exit;
+
+
+//有料プラグインライセンス
+●アドバンスカスタムフィールドpro
+b3JkZXJfaWQ9ODIzODl8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE2LTA1LTI2IDA1OjU0OjM1
+
+●アドミンメニューエディタープロ
+Y9Y09WVALABWPQ1AHL8EOK357BMN5KGS
+
+●アドミンカラム
+・ライセンスキー
+a9b597a2-ee5b-4272-bf7b-fc24d419859c
+
+
+//pre_get_postsの設定
+
+function change_posts_per_page($query) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+		if ( $query->is_post_type_archive('news_recruit') ) {
+			$query->set( 'posts_per_page', '15' );
+		}
+		if ( $query->is_post_type_archive('news') ) {
+			$query->set( 'posts_per_page', '15' );
+		}
+		if ( $query->is_tax('recipe_cat') ) {
+			$query->set( 'posts_per_page', '-1' );
+		}
+
+}
+
+add_action( 'pre_get_posts', 'change_posts_per_page' );
+
+★条件分岐
+<?php if ( 条件1 ): ?>
+	// 条件1に該当する場合の処理
+<?php else: ?>
+	// 条件1に該当しない場合の処理
+<?php endif; ?>
+
+<?php if ( 条件1 ): ?>
+	// 条件1に該当する場合の処理
+<?php elseif ( 条件2 ): ?>
+	// 条件1に該当せず 且つ 条件2に該当する場合の処理
+<?php elseif ( 条件3 ): ?>
+	// 条件1・2に該当せず 且つ 条件3に該当する場合の処理
+<?php endif; ?>
+
+<?php if(is_page(array('faq','article','privacy','sitemap'))) :?>
+	// 'faq''article''privacy''sitemap'に該当する場合の処理
+<?php endif; ?>
+
+is_front_page()
+is_single()
+is_page('5') || is_page('25')
+is_page(array(18, 19, 1, 11))
+
+・投稿タイプが「news」のアーカイブページの場合
+is_post_type_archive('news')
+
+・投稿タイプが「news」の詳細ページの場合
+is_singular('news')
+
+・タクソノミーが「news_cat」のアーカイブページの場合
+is_tax('news_cat')
+
+★タクソノミー・ターム関連のタグ
+
+ターム名だけをリンク無しで表示
+<?php single_tag_title(); ?>
+
+ターム名だけをリンク有りで表示
+<?php echo get_the_term_list($post->ID,'タクソノミー名'); ?>
+<?php echo get_the_term_list($post->ID,'タクソノミー名','','・'); ?>
+
+タームの情報いろいろ
+<?php
+if ($terms = get_the_terms($post->ID, 'news_cat')) {
+    foreach ( $terms as $term ) {
+        $name= esc_html($term->name);
+        $slug= esc_html($term->slug);
+    }
+}
+?>
+
+term_id　　　　　 　 //ID
+name　 　　　　　　　//名前
+slug 　　　　　　　　//スラッグ
+term_group　　 　　 //グループID
+term_taxonomy_id　 //タクソノミーID
+taxonomy　 　　　　　//タクソノミー名（カテゴリーの場合はcategory、タグの場合はpost_tag）
+description　 　　　//説明
+parent 　　　　　　　//親カテゴリーID（親カテゴリーがない場合は0）
+count 　　　　　　　 //投稿数
+
+
+●投稿ページのコンテンツ内容読み込み 
+★基本的な呼び出し
+<?php
+if(have_posts()): while(have_posts()): the_post();?>
+
+<h2><?php the_title(); ?></h2>
+<?php the_content(); ?>
+
+<?php endwhile; endif; 
+wp_reset_query();
+?>
+
+
+
+★acfを呼び出すとき
+<?php
+if(have_posts()): while(have_posts()): the_post();?>
+
+<?php the_field('任意のカスタムフィールド名');?>
+
+<?php endwhile; endif; 
+wp_reset_query();
+?>
+
+
+★acf-repeatのとき
+<?php
+if( have_rows('任意のフィールド名') ):
+    while ( have_rows('任意のフィールド名') ) : the_row();
+        the_sub_field('任意のカスタムフィールド名');
+    endwhile;
+else :
+endif;
+?>
+
+
+
+★acfの画像読み込みの各タグ
+◎アドバンスカスタムフィールドでは「画像オブジェクト」設定にする
+
+<?php ACF_img('メイン画像'); ?>
+<?php ACF_img('メイン画像','w254'); ?>
+<?php ACF_img('画像','w576','row'); ?>
+
+※repertのとき
+<?php ACF_img('画像','row'); ?>
+
+※画像のURL
+<?php ACF_img('画像','w576','url','row'); ?>
+
+
+WP_Queryスニペット一覧
+http://sole-color-blog.com/blog/php/265/
+
+●サブクエリー
+<?php
+$args = array( 
+'tax_query' => array(
+   'relation' => 'OR',     
+			array(
+				'taxonomy' => 'endayori_cat',
+				'terms' => array('matsuyama'),
+				'field' => 'slug',
+			),
+		),
+	'posts_per_page' => -1,
+	);
+	$the_query= new WP_Query( $args);	
+		if ($the_query->have_posts()) : 
+		  while ($the_query->have_posts()) : 
+			$the_query->the_post();
+				get_template_part('loop','news');
+   endwhile;
+endif;
+wp_reset_postdata();
+?>
+
+参考
+http://notnil-creative.com/blog/archives/1288
+
+
+●メインクエリー（ページネーションがあるときはこれをつかう）
+<?php
+ $query_option = array(
+    'tax_query' => array(
+        'relation' => 'OR',     
+            array(
+                'taxonomy' => 'selections_unlimited_cat',
+                'terms' => array('unlimited'),
+                'field' => 'slug',
+                ),
+           ),
+　      'posts_per_page' => 6,
+        'paged' => $paged,
+        );
+    query_posts($query_option);
+    get_template_part('loop','unlimited');
+     //wp_reset_query();
+?>
+    <div class="wp_pagenavi">
+        <?php wp_pagenavi(); ?>
+    </div>
+
+
+
+//ページIDでの呼び出し
+<?php the_field('呼び出す項目名',固定ページID); ?>
+
+//slug名での呼び出し（get_page_by_pathは固定ページのみでしか使えないです）
+<?php the_field('シナリオコース用の講座名',get_page_by_path('general/writer')->ID); ?>
+
+//リピーター要素の呼び出し
+<?php if( have_rows('繰り返し名',固定ページID) ): ?>
+<?php while( have_rows('繰り返し名',固定ページID) ): the_row(); ?>
+
+<?php if(get_sub_field('呼び出す項目名') != ""){ ?>
+	<a href="<?php the_sub_field('呼び出す項目名') ?>">
+	<?php ACF_img('呼び出す項目名','','','row'); ?></a><br />
+<?php } ?>
+
+<?php endwhile; ?>
+<?php endif; ?>
+
+
+●singleページ 前へ次へボタン
+
+<?php previous_post_link('%link', '« %title'); ?>
+<?php next_post_link('%link', '%title »'); ?>
+
+
+●プラグインwp-pagenavi
+設定でwp-pagenaviのcssの設定を切る
+css設定は私たちのを当て込む。
+吐き出されるソースは下記のものとある。
+
+<div class="wp-pagenavi">
+	<a class="nextpostslink" rel="next" href="#"≪</a>
+	<span class="pages">1/5</span>
+	<a class="page larger" title="Page 1" href="#">1</a>
+	<span class="current">2</span>
+	<a class="page larger" title="Page 3" href="#">3</a>
+	<a class="page larger" title="Page 4" href="#">4</a>
+	<a class="page larger" title="Page 5" href="#">5</a>
+	<a class="nextpostslink" rel="next" href="#">»</a>
+</div>
