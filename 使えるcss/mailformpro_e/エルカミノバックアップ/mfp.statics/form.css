@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+.mailform{
+	margin-bottom:50px;
+}
+
+#form_area form#mailformpro dl dt {
+	float: left;
+	width: 280px;
+	font-weight:bold;
+	padding: 22px 10px 0px 10px;
+	text-align: left;
+	border-top: solid 1px #EEE;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#form_area form#mailformpro dl dd {
+	min-height:30px;
+	border-top: solid 1px #EEE;
+	padding: 15px 5% 15px 285px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+
+#form_area .checkboxArea li{
+	float:left;
+}
+
+#form_area .checkbox{
+	padding:15px;
+	margin-bottom:20px;
+	border:solid 1px #EEE;
+	background:#FFFEF5;
+	}
+
+
+#form_area .must,.any {
+	display: block;
+	text-shadow:none;
+	color: #FFF;
+	font-weight:normal;
+	float: right;
+	padding: 2px 5px;
+	font-size: 10px;
+	margin: -5px 5px 0 5px;
+	border-radius: 4px;
+	box-shadow:none;
+	background-image: url(../img/must_any.png);
+	background-size: 100% 100%;
+
+
+}
+
+
+#form_area .must {
+	background-color: #C00;
+	border: solid 2px #C00;
+	}
+#form_area .any {
+	background-color: #888;
+	border: solid 2px #888;
+}
+
+
+@media screen and (max-width: 800px) {
+
+.mailform{
+	margin-bottom:30px;
+}
+
+
+
+#form_area form#mailformpro dl dt {
+	font-size:16px;
+	float: none;
+	width: 100%;
+	clear: both;
+	text-align: left;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:3px;
+
+}
+#form_area form#mailformpro dl dd {
+	width:100%;
+	border-top: none;
+	padding: 10px 20px 10px 20px;
+	text-align: left;
+}
+
+#form_area .must {
+	float: right;
+	margin-right:5px;
+}
+
+#form_area .any {
+	float: right;
+	margin-right:5px;
+}	
+	
+}
+
+/* リセット */
+#form_area .mfp_element_text,
+#form_area .mfp_element_number,
+#form_area .mfp_element_select-one,
+#form_area .mfp_element_email,
+#form_area .mfp_element_tel,
+#form_area .mfp_element_textarea {
+	border: none;
+	/*box-shadow: none;*/
+	/*padding: 0;*/
+	margin: 0;
+	vertical-align: middle;
+}
+
+
+
+/*************************
+インプット
+**************************/
+#form_area .size_name{ width:300px; text-align:left !important;}
+#form_area .size_zip{ width:150px;}
+#form_area .size_tel{ width:150px;}
+#form_area .size_age{ padding-right:45%;}
+
+
+.inputBox {
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc !important;
+	border-radius: 4px;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.075) inset;
+	display: block;
+	font-size: 14px;
+	height: 34px;
+	line-height: 1.42857;
+	padding: 6px 10px;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.inputBox:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+textarea{ width:100% !important;}
+textarea.inputBox {
+	height: auto !important;
+}
+
+
+.error { background-color: #FFEEEE; }
+
+/*************************
+セレクト
+**************************/
+#form_area .mfp_element_select-one{
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc !important;
+	border-radius: 4px;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.075) inset;
+	display: block;
+	font-size: 14px;
+	height: 34px;
+	line-height: 1.42857;
+	padding: 6px 10px;
+	width: 300px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#form_area .mfp_element_select-one option{
+	padding: 2px 10px;
+}
+
+/***********************
+送信ボタン
+************************/
+input[type="submit"]#submit_bt {
+	background: #55AECE;
+	width: 60%;
+	padding: 15px;
+	letter-spacing: 1px;
+	border: none;
+	color: #FFF;
+	font-size:140%;
+	font-weight:bold;
+	letter-spacing: 0.2em;
+	border-radius: 3px;
+	text-shadow: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-webkit-appearance: none;
+}
+
+input[type="submit"].no_check{
+	background:#999 !important;
+	cursor:default;
+	}
+
+button#mfp_button_send , button#mfp_button_cancel {
+	width: 40%;
+	padding: 15px;
+	letter-spacing: 1px;
+	border: none;
+	color: #FFF;
+	font-size:140%;
+	font-weight:bold;
+	letter-spacing: 0.2em;
+	border-radius: 3px;
+	text-shadow: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-webkit-appearance: none;
+}
+button#mfp_button_send{background: #55AECE;}
+button#mfp_button_cancel{background: #AAA;}
+
+
+@media screen and (max-width: 800px) {
+	input[type="submit"]#submit_bt {
+		width: 76%;
+		font-size:100%;
+	}
+	button#mfp_button_send , button#mfp_button_cancel {
+		width:45%;
+		font-size:85%;
+		letter-spacing: 0em;
+	}
+	
+}
+
+/************************
+確認画面
+*************************/
+#form_area #mfp_confirm_table{
+	margin-bottom:60px;
+}
+
+#form_area #mfp_phase_confirm_inner h4{
+	font-size: 18px;
+	font-weight: bold;
+	color:#00429E;
+	letter-spacing: 0.14em;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+#form_area table#mfp_confirm_table th,#form_area table#mfp_confirm_table td{
+	padding-top:12px;
+	padding-bottom:12px;
+}
+
+
+@media screen and (max-width: 800px) {
+#form_area table#mfp_confirm_table{
+	margin-left:auto;
+	margin-right:auto;
+	width:94%;
+}
+#form_area table#mfp_confirm_table tr th{
+	width:20%;
+}
+
+#form_area #mfp_phase_confirm_inner h4{
+	padding-top:80px;
+}
+
+}
+
+
+/************************
+完了画面
+*************************/
+.thx_box{
+	text-align:left;
+	margin:40px 15%;
+	display:block;
+	padding:8px 10px;
+	text-decoration:none;
+	/*background:#EEE;*/
+}
+.thx_box h2{
+	color:red;
+	text-align:left;
+}
+
+@media screen and (max-width: 800px) {
+.thx_box{
+	margin:30px 3%;
+	/*font-size:10px;*/
+}
+
+}

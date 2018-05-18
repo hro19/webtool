@@ -1,0 +1,118 @@
+:①Node.js / npmをインストールする（for Windows）
+
+下記ページに沿ってNode.js / npmをインストールする。
+
+http://qiita.com/taipon_rock/items/9001ae194571feb63a5e
+
+
+②Gulpをグローバルにインストール
+ package.jsonファイルの作成
+
+
+※コマンドプロンプトで
+cd /Users/horita_PC/myproject
+cd /Users/ほりたこうき/Desktop/g_test
+cd /Users/horita_PC/Desktop/g_test
+
+cd /
+F:
+cd tabキーで選択
+
+
+//gulp.jsをインストール
+npm install -g gulp-cli
+
+
+npm init
+で設定完了
+
+
+③プラグインをインストール
+
+npm install --save-dev プラグイン名
+
+npm install --save-dev gulp　【gulp基本】
+#npm install --save-dev gulp-coffee【coffee-scriptに対応】
+npm install --save-dev gulp-sass　【sassに対応】
+npm install --save-dev gulp-autoprefixer  【自動prefix】
+#npm install --save-dev gulp-pleeease　【自動prefixなど】
+#npm install --save-dev gulp-uglify　【jsを圧縮】
+npm install --save-dev gulp-plumber　【エラー時に監視を止めない】
+#npm install --save-dev gulp-notify　【デスクトップ通知】
+#npm install --save-dev browser-sync　【オートリロード】
+npm install --save-dev gulp-imagemin　【画像圧縮】
+npm install --save-dev imagemin-pngquant　【画像圧縮をさらに行う】
+#npm install --save-dev gulp.spritesmith　【スプライト画像の生成】
+
+
+gulpfile.jsに機能を書いていく。
+
+
+自動的に動かす（watch機能）
+gulp watchTask
+
+ファイルの監視を終了する場合は、コマンドラインで[Ctrl]と[C]キーを同時に押します
+
+
+
+
+https://ics.media/entry/3290/2
+
+
+
+参考サイト
+●sassの導入し方
+http://qiita.com/Commander-Aipa/items/aa044ae907d1f479ccb9
+
+
+●ベンダープレフィックス付加
+https://liginc.co.jp/web/tutorial/117900
+
+
+
+導入したいものリスト（参考・http://horicdesign.com/gulp/entry-194.html）
+
+・画像最適化（gulp-imagemin）
+・Autoprefixer（gulp-autoprefixer）
+
+・sass（gulp-sass）
+
+・エラー時にwatchを止めない（gulp-plumber）
+・cssの順番を整理（gulp-csscomb）
+
+
+
+参考サイト
+
+インストール
+http://qiita.com/masaboku/items/ed5ca9226482a09e3bb2
+
+gulp-imagemin
+http://whiskers.nukos.kitchen/2014/12/12/gulp-imagemin.html
+
+gulp-imageminとpngquantを使って画像圧縮を効率化する
+http://blog.tsumikiinc.com/article/20150226_gulp-imagemin.html
+
+sassに関して
+http://qiita.com/ShinyaOkazawa/items/9144dfac166faa0ad4b3
+sass自動コンパイルについて
+https://airi-kioka.amebaownd.com/posts/756979
+
+セットアップ　gulpfile.jsの書き方
+http://qiita.com/kazuma1107/items/46b1dd1c7309426bf734
+
+gulpのインストールから環境構築まで
+http://qiita.com/katsunory/items/06214936655375a414d5
+
+gulp-plumberとgulp-notifyを使ったデスクトップ通知
+http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
+
+
+おまけ：distとdestの違い
+http://takunagai.github.io/post/comparison_dist_dest/
+
+
+
+
+http://whiskers.nukos.kitchen/2014/12/15/gulp-responsive.html
+gulp-responsiveプラグインを

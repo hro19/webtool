@@ -1,0 +1,52 @@
+●rest API 調査
+
+
+固定ページ全記事
+
+
+https://l-chan.tv/wp-json/wp/v2/pages
+
+
+
+●参考サイトlig
+https://liginc.co.jp/325391
+
+
+◇カスタム投稿設定に下記を追記
+'show_in_rest' => true,
+
+◇するとjsonを吐きます
+https://cooperativehouse.jp/wp-json/wp/v2/news/?_embed
+
+
+◇カスタムフィールド値を取得したければ下記のプラグイン
+ACF to REST API
+
+※９件しか吐かないのは何故か？？？？
+
+
+
+
+◇カスタム投稿のタクソノミーについて
+●参考サイト　tam
+https://www.tam-tam.co.jp/tipsnote/cms/post9688.html
+
+カスタム投稿設定に下記を追記
+'show_in_rest' => true,
+を追記して
+
+https://cooperativehouse.jp/wp-json/wp/v2/news_cat
+
+
+◇フィルターについて
+●参考サイトlig
+https://liginc.co.jp/367078
+
+
+◇acfの値でfillterはこちら
+https://teratail.com/questions/80824
+
+
+
+◇タクソノミ-絞込でのjson
+https://cooperativehouse.jp/wp-json/wp/v2/news?news_cat=29

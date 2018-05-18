@@ -1,0 +1,24 @@
+<style>
+
+p.front_member_detail{
+	display:table;
+	margin:0 auto;
+}
+
+p.front_member_detail a {
+    font-family: "Shuei KakuGo Kin L";
+    text-align: center;
+    padding: 6px 50px;
+    background: #FFF url("/img/frontpage/arrow_minimini_r.png") no-repeat scroll 93% 50%;
+    border: 1px solid #DDD;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+p.front_member_detail a:hover{
+	background-color:#eee;
+	color:#FF6092;
+	
+}
+</style>
+<p class="front_member_detail"><a href="/results/">Ú×‚ğŒ©‚é</a></p>

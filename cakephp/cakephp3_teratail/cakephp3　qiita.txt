@@ -1,0 +1,11 @@
+●cakePHP3で中間テーブルをJOINしてselectした時の、とあるエラーの話
+http://qiita.com/gitboku/items/151f6bbcaac1064c4eaa
+
+●CakePHP3の使い方まとめ
+http://qiita.com/s-kiriki/items/636ec1109f48fb977347
+
+●cakephp3　hasMany, belongsToManyアソシエーション先の 取得フィールド指定の方法
+http://qiita.com/sainome_7/items/370da7b4964569ce786a
+
+●CakePHP3でフロントとバックエンドでControllerとTemplateをフォルダ分けするための設定
+http://qiita.com/albyte/items/32a8928ae3ec3f95da33

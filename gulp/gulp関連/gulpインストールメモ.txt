@@ -1,0 +1,70 @@
+①Node.js / npmをインストールする（for Windows）
+
+下記ページに沿ってNode.js / npmをインストールする。
+
+http://qiita.com/taipon_rock/items/9001ae194571feb63a5e
+
+
+②Gulpをグローバルにインストール
+
+※コマンドプロンプトで
+cd /Users/horita_PC/myproject
+npm init
+で設定完了
+
+
+自動的に動かす（watch機能）
+gulp watchTask
+
+ファイルの監視を終了する場合は、コマンドラインで[Ctrl]と[C]キーを同時に押します
+
+→ package.jsonファイルの作成
+gulpfile.jsに機能を書いていく。
+
+
+https://ics.media/entry/3290/2
+
+
+
+参考サイト
+●sassの導入し方
+http://qiita.com/Commander-Aipa/items/aa044ae907d1f479ccb9
+
+
+●ベンダープレフィックス付加
+https://liginc.co.jp/web/tutorial/117900
+
+
+
+導入したいものリスト（参考・http://horicdesign.com/gulp/entry-194.html）
+
+・画像最適化（gulp-imagemin）
+・Autoprefixer（gulp-autoprefixer）
+
+・sass（gulp-sass）
+
+・エラー時にwatchを止めない（gulp-plumber）
+・cssの順番を整理（gulp-csscomb）
+
+
+
+
+
+
+参考サイト
+
+インストール
+http://qiita.com/masaboku/items/ed5ca9226482a09e3bb2
+
+gulp-imagemin
+http://whiskers.nukos.kitchen/2014/12/12/gulp-imagemin.html
+
+sassに関して
+http://qiita.com/ShinyaOkazawa/items/9144dfac166faa0ad4b3
+sass自動コンパイルについて
+https://airi-kioka.amebaownd.com/posts/756979
+
+セットアップ　gulpfile.jsの書き方
+http://qiita.com/kazuma1107/items/46b1dd1c7309426bf734
+
+

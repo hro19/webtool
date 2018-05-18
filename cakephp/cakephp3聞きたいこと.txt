@@ -1,0 +1,11 @@
+cakephp3聞きたいこと
+
+
+・localで作ったcakephpをさくらサーバーにアップしたい。
+うまくいかない
+
+
+・管理画面を設置したい
+
+・$this->set('_serialize', ['persons']);
+どういう意味ですか。

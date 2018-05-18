@@ -1,0 +1,88 @@
+cd C:\xampp\htdocs
+cd C:\xampp\htdocs\caketest
+
+cd C:\xampp\mysql\bin
+
+mysql -u root -p
+
+パスワードは
+root123
+(ちなみにユーザーはroot)
+
+
+show databases;
+
+create database mybookdb;
+
+show databases;
+
+use mybookdb;
+
+create table bookinfo(
+isbn VARCHAR(20) PRIMARY KEY,
+title VARCHAR(100),
+price INTEGER NOT NULL
+);
+
+set names cp932;
+
+insert into bookinfo values('0001','java',1000);
+insert into bookinfo values('0002','c++',2000);
+insert into bookinfo values('0003','ruby',3000);
+insert into bookinfo values('0004','perl',4000);
+insert into bookinfo values('0005','database',5000);
+
+select * from bookinfo;
+
+
+http://localhost:8765/
+
+describe テーブル名;
+テーブルのフィールド情報
+
+
+-------------------------------------
+cakephp関数について
+
+【bakeについて】
+
+①カレントディレクトリを合わせてあげる
+例　cd C:\xampp\htdocs\caketest
+
+②bakeする
+・そのテーブル全て
+bin\cake bake all users
+
+・コントローラーの作成
+bin\cake bake controller 名前
+
+・モデル（エンティティ、テーブル）の作成
+bin\cake bake model 名前
+
+・テンプレート（add, edit, index, view）の作成
+bin\cake bake template 名前
+
+Do you want to overwrite? (y/n/a/q)」。
+「y」既にあるファイルを上書きして新たにファイルを作ります。
+「a」「上書きするか？」を尋ねず、無条件ですべて上書きします
+
+【pagenateについて】
+●controllerに記述する
+
+    public $paginate = [
+        'limit' => 5,
+        'order' => [
+            'Persons.name' => 'asc'
+        ]
+    ];
+
+     public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
+ 
+    public function index()
+    {
+        $this->set('persons', $this->paginate());
+    }

@@ -1,0 +1,228 @@
+@charset "utf-8";
+
+/* =Reset default browser CSS.
+Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, font, ins, kbd, q, s, samp, small, strike,sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;margin: 0;outline: 0;padding: 0;vertical-align: baseline;}
+:focus {outline: 0;}
+
+ol, ul {list-style: none;}
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {font-weight: normal;text-align: left;}
+blockquote::before, blockquote::after,q::before, q::after {content: "";}
+blockquote, q {quotes: "" "";}
+a img {border: 0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+
+/* ========================================================
+	template.css => テンプレート用CSS
+======================================================== */
+body {
+	background: #bbd5ef url(../images/page_bg.jpg) top;
+	font:90%/1.5 "Lucida Sans Unicode", "Lucida Grande", Arial, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック",sans-serif;
+	color:#252525;
+}
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box;}
+
+table {
+	line-height: 1.6;
+}
+
+a {
+	color: #1d2088;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+label {
+	cursor: pointer;
+}
+input, select, textarea {
+	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana,Arial, Helvetica, sans-serif;
+	outline: none;
+	vertical-align: middle;
+}
+
+@media only screen and (max-width: 800px) {
+	img,
+	input[type=image] {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.img_link_on a:hover img{
+	opacity:0.7 !important;
+	filter: alpha(opacity=70) !important;        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=70)" !important;  /* ie 8 */
+	-moz-opacity:0.7 !important;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.7 !important;              /* Safari 1.x */
+	zoom:1 !important;
+  	transition: 0.4s;
+}
+
+.pc-none {display: none;}
+.sp-none {display: block;}
+
+.br_pc{display:block;}
+.br_sp{display:none;}
+@media only screen and (max-width: 800px) {
+	.pc-none {display: block;}
+	.sp-none {display: none;}
+	.br_pc{display:none;}
+	.br_sp{display:block;}
+}
+
+/* contents
+============================================================================================================ */
+#container {
+	width: 900px;
+	margin: 0 auto;
+	font-size: 13px;
+	font-size: 1.3rem;
+}
+@media only screen and (max-width: 800px) {
+	#container {
+		width: auto;
+		background: none
+	}
+}
+
+
+#container > header{
+	background-color: #ffff;
+	border-bottom: 3px solid #599583;
+}
+#container > header h2{
+	padding: 15px;
+}
+
+#container > header ~ *:after {
+	content: "."; display: block; height: 0; clear: both; visibility: hidden; line-height: 0; overflow: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+	#container > header{
+		margin: 0;
+		padding-bottom: 15px;
+}
+	#container section {
+		float: none !important;
+		width: auto !important;
+	}
+	#container section h1 {
+		padding: 0.2em 1em;
+		color: #ffffff;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	#container section h1:after {
+		content: attr(data-label);
+	}
+	#container section h1 img {
+		display: none;
+	}
+}
+
+
+/* form
+============================================================================================================ */
+#form {}
+/* title */	
+#form .title {
+	text-align: center;
+}
+		#form .title > h1 img {
+			margin: 0 auto;
+		}
+
+/* contents */	
+#form .contents {
+	background:#fff;
+	padding: 20px 50px;
+}
+	#form .contents .inner {
+		position:relative;
+		zoom: 1;
+		text-align: center;
+	}
+	#form .contents .inner:after {
+		content: "."; display: block; height: 0; clear: both; visibility: hidden; line-height: 0;
+	}
+	#form .contents .inner p.banar{
+		position:absolute;
+		left:0;
+		right:0;
+		bottom:40px;
+		margin:auto;
+	}
+
+@media only screen and (max-width: 800px) {
+		#form .contents .inner p.banar{
+			width:55%;
+			bottom:4%;
+		}
+
+	/* title */	
+	#form .title {
+		padding-bottom: 1em;
+	}
+		#form .title > h1 {
+			padding: 0;
+		}
+			#form .title > h1 img {
+				display: block;
+			}
+
+	/* contents */	
+	#form .contents {
+		margin-bottom: 0;
+		padding-bottom: 2em;
+		padding: 20px;
+	}
+		#form .contents .inner {
+			padding: 0 10px;
+			text-align: center;
+		}
+		#form .contents .inner::after {
+		}	
+}
+
+/* フッター
+============================================================================================================ */
+#footer {
+	padding: 20px 30px 50px;
+	background-color: #599583;
+	font-size: 11px;
+	font-size: 1.1rem;
+	color: #ffffff;
+}
+#footer::after {
+	content: "."; display: block; height: 0; clear: both; visibility: hidden; line-height: 0;
+}
+#footer p a {
+	color: #FFF;
+}
+#footer p a:visited,#footer p a:active {
+	text-decoration: underline;
+}
+
+#footer p.copyright {
+	float: right;
+	font-size: 10px;
+	font-size: 1.0rem;
+}
+@media only screen and (max-width: 800px) {
+	#footer {
+		margin: 0 !important;
+		padding: 10px;
+	}
+	#footer p {
+	}
+	#footer p.copyright {
+		margin-top: 1.5em;
+	}
+}

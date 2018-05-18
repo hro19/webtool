@@ -1,0 +1,221 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+a{
+	text-decoration:none;
+	outline:none;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+ *zoom: 1;
+}
+
+.img_link_on a:hover img{
+	opacity:0.7 !important;
+	filter: alpha(opacity=70) !important;        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=70)" !important;  /* ie 8 */
+	-moz-opacity:0.7 !important;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.7 !important;              /* Safari 1.x */
+	zoom:1 !important;
+  	transition: 0.4s;
+}
+.item a:hover img{
+	opacity:0.6 !important;
+	filter: alpha(opacity=60) !important;        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=60)" !important;  /* ie 8 */
+	-moz-opacity:0.6 !important;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.6 !important;              /* Safari 1.x */
+	zoom:1 !important;
+  	transition: 0.4s;
+}
+
+.pc_disp{
+	display:block;
+}
+
+.sp_disp{
+	display:none;
+}
+@media screen and (max-width: 640px) {
+	.pc_disp{
+		display:none;
+	}
+	
+	.sp_disp{
+		display:block;
+	}
+}
+
+#wrapper {
+	position: relative;
+	max-width: 1040px;
+	min-width: 1040px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+	#wrapper {
+		position: relative;
+		max-width: 640px;
+		min-width: 320px;
+		margin: 0 auto;
+	}
+}
+#container {
+	width: 100%;
+	min-width:1040px;
+	margin: 0 auto;
+	position: relative;
+}
+.grid_sizer{
+  width: 25%;
+}
+
+.item {
+	position:relative;
+	margin: 10px 10px 40px 10px;
+	width: 200px;
+	height: 170px;
+	padding: 8px;
+	text-align: center;
+}
+.item.x2 {
+	width: 460px;
+	height: 406px;
+}
+.item.x3 {
+	width: 460px;
+	height: 170px;
+}
+
+.item.x4 {
+	width: 200px;
+	height: 406px;
+}
+.item.x5 {
+	width: 720px;
+	height: 642px;
+}
+img.new{
+	position:absolute;
+	top:-4px;
+	right:-4px;
+	z-index:10;
+	width:inherit !important;
+	height:inherit !important;	
+}
+.item h3 {
+	display:inline-block;
+	margin: 0px auto 5px auto;
+	padding-bottom:3px;
+	font-size:12px;
+	color: #333;
+	background:url(../images/h_under_dot.gif);
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+
+.item p {
+	margin: 2px auto 5px auto;
+	font-size:11px;
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+h1 {
+	font-size: 30px;
+	color: #777;
+	padding: 10px;
+}
+p#ww {
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+}
+@media screen and (max-width: 640px) {
+	
+	#container {
+		min-width:320px;
+		margin:0 auto;
+	}
+	
+	.item {
+		margin: 0px auto 20px auto;/*ここ要注意*/
+		width: 80%;
+		height: auto;
+		box-sizing:border-box;
+		padding: 8px;
+		text-align:left;
+	}
+	.item img{
+		width:100%;
+		height:auto;
+		display:block;
+	}
+	
+	.item.x2,.item.x3,.item.x4,.item.x5 {
+		width: 80%;
+		height: auto;
+	}
+	.item.x4 img{
+		display:block;
+		margin:0 auto;
+		width: 70%;
+		height: auto;
+	}
+	
+	img.new{
+		position:absolute;
+		top:15px;
+		right:15px;
+		z-index:10;
+		width:inherit !important;
+		height:inherit !important;	
+	}
+	.item.x4 img.new{
+		top:15px;
+		right:17%;
+	}
+	.item h3 {
+		margin: 6px auto 5px auto;
+		padding-bottom:5px;
+		display:block;
+		font-size:20px;
+	}
+	.item p {
+		margin: 2px auto 5px auto;
+		font-size:16px;
+	}
+
+}
+

@@ -1,0 +1,85 @@
+
+●cssの640ピクセル以下の記述
+@media screen and (max-width: 640px) {
+}
+
+
+●device-widthの指定
+■spデバイス指定
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=2.0,user-scalable=yes">
+
+■pcデバイス指定
+<meta name="viewport" content="target-densitydpi=device-dpi, width=1200px, maximum-scale=1.0, user-scalable=yes">
+
+■切り替え
+<?php 
+	$ua = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match('#\b(iP(hone|od);|Android.*Mobile )|Windows.*Phone|blackberry.*|PSP|3DS|Vita#',$ua)){
+		$ua = 'sp';
+	}elseif(preg_match('#\iPad|Android|Kindle|Silk|PlayBook|RIM\sTablet#',$ua)){
+		$ua = 'tb';
+	}else{
+		$ua = 'pc';
+	}
+?>
+<?php if($ua == 'pc') {?>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<?php }elseif($ua == 'tb') {?>
+<meta name="viewport" content="width=1000, maximum-scale=1, user-scalable=yes">
+<?php }elseif($ua == 'sp') {?>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<?php };?>
+
+
+
+
+.mb_l{ margin-bottom:30px;}
+.mb_m{ margin-bottom:20px;}
+.mb_s{ margin-bottom:10px;}
+.mb_ss{ margin-bottom:5px;}
+
+.mt_l{ margin-top:30px;}
+.mt_m{ margin-top:20px;}
+.mt_s{ margin-top:10px;}
+.mt_ss{ margin-top:5px;}
+
+.pt_ll{ padding-top:60px;}
+.pt_l{ padding-top:30px;}
+.pt_m{ padding-top:20px;}
+.pt_s{ padding-top:10px;}
+.pt_ss{ padding-top:5px;}
+
+@media only screen and (max-device-width:480px) and (orientation:landscape) {
+
+.mb_l{ margin-bottom:60px;}
+.mb_m{ margin-bottom:40px;}
+.mb_s{ margin-bottom:20px;}
+.mb_ss{ margin-bottom:10px;}
+
+.mt_l{ margin-top:60px;}
+.mt_m{ margin-top:40px;}
+.mt_s{ margin-top:20px;}
+.mt_ss{ margin-top:10px;}
+
+.pt_ll{ padding-top:120px;}
+.pt_l{ padding-top:60px;}
+.pt_m{ padding-top:40px;}
+.pt_s{ padding-top:20px;}
+.pt_ss{ padding-top:10px;}
+
+}
+
+.frame_l{
+	padding-left:20px;
+	padding-right:20px;
+	}
+.frame_m{
+	padding-left:35px;
+	padding-right:35px;
+	}
+.frame_s{
+	padding-left:55px;
+	padding-right:55px;
+	}
+

@@ -1,0 +1,15 @@
+cakephp疑問点
+
+
+●ログイン後のリダイレクトについて
+ログイン解除後にリダイレクト設定をしました。
+
+①/caketest/users/login/
+に直接アクセスして解除したら、リダイレクト先は「」になりますが、
+
+②/caketest/helo/からloginページに飛ばされて、そこでログインをした場合は/caketest/helo/に戻されますが、これはそのような仕様なのでしょうか。
+
+
+
+●cakephpのコアライブラリはどこで見ることができるのでしょうか。
+https://book.cakephp.org/2.0/ja/core-libraries.html

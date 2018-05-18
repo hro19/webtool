@@ -1,0 +1,252 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+*{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+html {
+	font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro","游ゴシック", "Yu Gothic", YuGothic,  "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+a{
+	text-decoration:none;
+	outline:none;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+ *zoom: 1;
+}
+
+.img_link_on a:hover img{
+	opacity:0.7 !important;
+	filter: alpha(opacity=70) !important;        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=70)" !important;  /* ie 8 */
+	-moz-opacity:0.7 !important;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.7 !important;              /* Safari 1.x */
+	zoom:1 !important;
+  	transition: 0.4s;
+}
+.item a:hover img{
+	opacity:0.6 !important;
+	filter: alpha(opacity=60) !important;        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=60)" !important;  /* ie 8 */
+	-moz-opacity:0.6 !important;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.6 !important;              /* Safari 1.x */
+	zoom:1 !important;
+  	transition: 0.4s;
+}
+
+.pc_disp{
+	display:block;
+}
+
+.sp_disp{
+	display:none;
+}
+@media screen and (max-width: 640px) {
+	.pc_disp{
+		display:none;
+	}
+	
+	.sp_disp{
+		display:block;
+	}
+}
+
+#wrapper {
+	position: relative;
+	max-width: 952px;
+	min-width: 952px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+	#wrapper {
+		position: relative;
+		max-width: 640px;
+		min-width: 320px;
+		margin: 0 auto;
+		background:url(../images/bg_cream.jpg);
+	}
+}
+#container {
+	width: 100%;
+	min-width:952px;
+	margin: 0 auto;
+	position: relative;
+}
+.grid_sizer{
+  width: 25%;
+}
+
+.item {
+	position:relative;
+	margin: 0px 6px 72px 6px;
+	width: 226px;
+	height: 120px;
+	text-align: center;
+}
+.item img{
+	display:block;
+}
+.item.x2 {
+	width: 464px;
+	height: 312px;
+}
+.item.x3 {
+	width: 464px;
+	height: 120px;
+}
+
+.item.x4 {
+	width: 226px;
+	height: 312px;
+}
+.item.x5 {
+	width: 702px;
+	height: 504px;
+}
+img.new{
+	position:absolute;
+	top:-14px;
+	right:-4px;
+	z-index:10;
+	width:inherit !important;
+	height:inherit !important;	
+}
+
+span.tag{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:10;
+	background:#3F5A6F;
+	color:#FFF;
+	font-size:0.85rem;
+	padding:2px 15px;
+}
+a:hover span.tag{
+	opacity:0.6;
+}
+.item h3 {
+	display:inline-block;
+	margin: 0px auto 5px auto;
+	padding-bottom:3px;
+	font-size:12px;
+	color: #333;
+	background:url(../images/h_under_dot.gif);
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+
+.item p {
+	margin: 0px auto 5px auto;
+	font-size:11px;
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+h1 {
+	font-size: 30px;
+	color: #777;
+	padding: 10px;
+}
+p#ww {
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+}
+@media screen and (max-width: 640px) {
+	
+	#container {
+		min-width:320px;
+		margin:0 auto;
+	}
+	
+	.item {
+		margin: 0px auto 20px auto;/*ここ要注意*/
+		width: 80%;
+		height: auto;
+		box-sizing:border-box;
+		text-align:left;
+		padding-bottom:20px;
+	}
+	.item img{
+		width:100%;
+		height:auto;
+	}
+	
+	.item.x2,.item.x3,.item.x4,.item.x5 {
+		width: 80%;
+		height: auto;
+	}
+	.item.x4 img{
+		display:block;
+		margin:0 auto;
+		width: 70%;
+		height: auto;
+	}
+	
+	img.new{
+		position:absolute;
+		top:7px;
+		right:3%;
+		z-index:10;
+		width:18% !important;
+		height:auto !important;	
+	}
+	span.tag{
+	position:absolute;
+	z-index:10;
+	padding:7px 15px 4px 15px;
+	font-size:0.8rem;
+	}
+	.item.x4 img.new{
+		right:17%;
+	}
+	.item.x4 span.tag{
+		left:15%;
+	}
+	.item h3 {
+		margin: 14px auto 5px auto;
+		padding-bottom:5px;
+		display:block;
+		font-size:15px;
+	}
+	.item p {
+		margin: 2px auto 5px auto;
+		font-size:13px;
+		text-align: left;
+		white-space:normal;
+	}
+
+}
+
