@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<Sets xmlns="http://structuret/maker/set/set.xsd">
+  <inis>
+    <TGet>1</TGet>
+    <TOut>4</TOut>
+    <TSize>true</TSize>
+    <Mdate>false</Mdate>
+    <Kdate>false</Kdate>
+    <Maker>false</Maker>
+    <Kind>false</Kind>
+    <Filter>false</Filter>
+    <Narabi>更新日時,作成日時,アクセス日時,種類（拡張子）</Narabi>
+    <Tani>1</Tani>
+  </inis>
+</Sets>

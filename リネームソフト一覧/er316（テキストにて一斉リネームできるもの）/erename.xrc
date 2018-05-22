@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxFrame" name="frame">
+		<style>wxDEFAULT_FRAME_STYLE</style>
+		<title>E-Rename</title>
+		<centered>1</centered>
+		<aui_managed>0</aui_managed>
+		<object class="wxPanel" name="basePanel">
+			<object class="wxBoxSizer">
+				<orient>wxVERTICAL</orient>
+				<object class="sizeritem">
+					<option>0</option>
+					<flag>wxALL|wxEXPAND</flag>
+					<border>5</border>
+					<object class="wxStaticBoxSizer">
+						<orient>wxVERTICAL</orient>
+						<label>Folder including files for rename</label>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxEXPAND</flag>
+							<border>5</border>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<object class="wxGridSizer">
+										<rows>0</rows>
+										<cols>1</cols>
+										<vgap>0</vgap>
+										<hgap>0</hgap>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALL|wxEXPAND</flag>
+											<border>5</border>
+											<object class="wxStaticText" name="m_staticText4">
+												<label>Path</label>
+												<wrap>-1</wrap>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<object class="wxGridSizer">
+										<rows>0</rows>
+										<cols>1</cols>
+										<vgap>0</vgap>
+										<hgap>0</hgap>
+										<object class="sizeritem">
+											<option>1</option>
+											<flag>wxEXPAND</flag>
+											<border>5</border>
+											<object class="wxBoxSizer">
+												<orient>wxHORIZONTAL</orient>
+												<object class="sizeritem">
+													<option>1</option>
+													<flag>wxALL|wxEXPAND</flag>
+													<border>5</border>
+													<object class="wxComboBox" name="pathComboBox">
+														<value></value>
+														<content />
+													</object>
+												</object>
+												<object class="sizeritem">
+													<option>0</option>
+													<flag>wxALL|wxEXPAND</flag>
+													<border>5</border>
+													<object class="wxButton" name="referenceButton">
+														<label>Browse...</label>
+														<default>0</default>
+													</object>
+												</object>
+											</object>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+				<object class="sizeritem">
+					<option>0</option>
+					<flag>wxALL|wxEXPAND</flag>
+					<border>5</border>
+					<object class="wxNotebook" name="m_notebook1">
+						<object class="notebookpage">
+							<label>Output</label>
+							<selected>1</selected>
+							<object class="wxPanel" name="m_panel1">
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALL|wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxStaticBoxSizer">
+											<orient>wxVERTICAL</orient>
+											<label>Options</label>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxEXPAND|wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="hasRootPathCheckBox">
+													<label>Output folder path in the first line</label>
+													<checked>0</checked>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="hasHeadersCheckBox">
+													<label>Output row names in the first line</label>
+													<checked>0</checked>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="multipleLevelCheckBox">
+													<label>Include subfolders</label>
+													<checked>0</checked>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="yieldsFoldersCheckBox">
+													<label>Rename folders</label>
+													<checked>0</checked>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="outputsShiftJisCheckBox">
+													<label>Output in Shift__JIS encoding</label>
+													<checked>0</checked>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND|wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticBoxSizer">
+											<orient>wxVERTICAL</orient>
+											<label>Items</label>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxCheckBox" name="hasIndexCheckBox">
+													<label>Index</label>
+													<checked>0</checked>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxEXPAND</flag>
+												<border>5</border>
+												<object class="wxBoxSizer">
+													<orient>wxHORIZONTAL</orient>
+													<object class="sizeritem">
+														<option>1</option>
+														<flag>wxEXPAND</flag>
+														<border>5</border>
+														<object class="wxBoxSizer">
+															<orient>wxVERTICAL</orient>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasExtensionCheckBox">
+																	<label>Extension</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasOriginalNameCheckBox">
+																	<label>Original Name</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasDirectoryCheckBox">
+																	<label>Folder</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+														</object>
+													</object>
+													<object class="sizeritem">
+														<option>1</option>
+														<flag>wxEXPAND</flag>
+														<border>5</border>
+														<object class="wxBoxSizer">
+															<orient>wxVERTICAL</orient>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasSizeCheckBox">
+																	<label>Size</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasTypeCheckBox">
+																	<label>Type</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxCheckBox" name="hasDateModifiedCheckBox">
+																	<label>Date modified</label>
+																	<checked>0</checked>
+																</object>
+															</object>
+														</object>
+													</object>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALL|wxEXPAND</flag>
+												<border>5</border>
+												<object class="wxRadioBox" name="extensionRadioBox">
+													<style>wxRA_SPECIFY_COLS</style>
+													<label>List file extension</label>
+													<selection>0</selection>
+													<content>
+														<item>*.txt</item>
+														<item>*.csv</item>
+													</content>
+													<dimension>1</dimension>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALL|wxEXPAND</flag>
+												<border>5</border>
+												<object class="wxRadioBox" name="delimiterRadioBox">
+													<style>wxRA_SPECIFY_COLS</style>
+													<label>Item delimiter</label>
+													<selection>0</selection>
+													<content>
+														<item>Comma</item>
+														<item>Tab</item>
+													</content>
+													<dimension>1</dimension>
+												</object>
+											</object>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="notebookpage">
+							<label>Edit</label>
+							<selected>0</selected>
+							<object class="wxPanel" name="m_panel2">
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxRadioButton" name="openDefaultRadioButton">
+											<label>Open with default program</label>
+											<value>1</value>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxRadioButton" name="openSpecifiedRadioButton">
+											<label>Open with selected program</label>
+											<value>0</value>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag></flag>
+												<border>5</border>
+												<object class="wxGridSizer">
+													<rows>0</rows>
+													<cols>1</cols>
+													<vgap>0</vgap>
+													<hgap>0</hgap>
+													<object class="sizeritem">
+														<option>0</option>
+														<flag>wxALL</flag>
+														<border>5</border>
+														<object class="wxStaticText" name="m_staticText41">
+															<label>Path</label>
+															<wrap>-1</wrap>
+														</object>
+													</object>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag></flag>
+												<border>5</border>
+												<object class="wxGridSizer">
+													<rows>0</rows>
+													<cols>1</cols>
+													<vgap>0</vgap>
+													<hgap>0</hgap>
+													<object class="sizeritem">
+														<option>1</option>
+														<flag>wxEXPAND</flag>
+														<border>5</border>
+														<object class="wxBoxSizer">
+															<orient>wxHORIZONTAL</orient>
+															<object class="sizeritem">
+																<option>1</option>
+																<flag>wxALL|wxEXPAND</flag>
+																<border>5</border>
+																<object class="wxComboBox" name="appPathComboBox">
+																	<value></value>
+																	<content />
+																</object>
+															</object>
+															<object class="sizeritem">
+																<option>0</option>
+																<flag>wxALL</flag>
+																<border>5</border>
+																<object class="wxButton" name="appReferenceButton">
+																	<label>Browse...</label>
+																	<default>0</default>
+																</object>
+															</object>
+														</object>
+													</object>
+												</object>
+											</object>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+						<object class="notebookpage">
+							<label>Startup</label>
+							<selected>0</selected>
+							<object class="wxPanel" name="m_panel3">
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxCheckBox" name="autoEditCheckBox">
+											<label>New edit when startup with folder path</label>
+											<checked>0</checked>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+				<object class="sizeritem">
+					<option>0</option>
+					<flag>wxALIGN_RIGHT</flag>
+					<border>5</border>
+					<object class="wxBoxSizer">
+						<orient>wxHORIZONTAL</orient>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="newEditButton">
+								<label>New Edit</label>
+								<default>1</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="editButton">
+								<label>Re-edit</label>
+								<default>0</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="applyButton">
+								<label>Apply</label>
+								<default>0</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALIGN_RIGHT|wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="undoButton">
+								<label>Undo</label>
+								<default>0</default>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>
